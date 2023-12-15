@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thắp hương để qua môn</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W60E3193N9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W60E3193N9');
+</script>
+  <body id="background">
+    <div class="container">
+      
+      <div class="child phat">
+        <div class="title">
+        </div>
+        <img class="imganhphat" src="anh phat.png" alt="" />
+        <img class="may" src="may-removebg-preview.png" alt="" />
+      </div>
+      <div class="child img--bantho">
+        <img
+          class="quehuong"
+          src="nhang siu vip.png"
+          alt=""
+        />
+        <img class="add" src="add_icon.png" alt="">
+        <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file">
+        <img class="temple" src="anh_chua_uth-removebg-preview.png" alt="" />
+      </div>
+
+      <div class="form">
+        <input
+          type="text"
+          placeholder="Nhập điều ước của thí chủ vào đây nè 🙏"
+        />
+        <button class="btn">Thắp Hương</button>
+        <audio class="audio" controls>
+          <source src="tiengchuong.mp3" type="" />
+        </audio>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+  const addImage = document.querySelector('.add');
+  const inputFile = document.querySelector('#input-file');
+
+  addImage.addEventListener('click', function() {
+    inputFile.click();
+  });
+  
+  inputFile.addEventListener('change', function() {
+    addImage.src = URL.createObjectURL(inputFile.files[0]);
+    console.log(inputFile.files);
+  });
+});
+    const btn = document.querySelector(".btn");
+    const quehuong = document.querySelector(".quehuong");
+    const phat = document.querySelector(".phat");
+    const audio = document.querySelector(".audio");
+    btn.addEventListener("click", () => {
+      quehuong.classList.add("thaphuong");
+      setTimeout(() => {
+        phat.classList.add("hienphat");
+        audio.play();
+      }, 1500);
+    });
+  </script>
+</html>
